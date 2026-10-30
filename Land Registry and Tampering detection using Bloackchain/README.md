@@ -87,16 +87,4 @@ npx hardhat test
 3. Change one word in the pasted text and verify again — it will be stamped
    "Tampered / mismatch", and the two hashes shown will no longer match.
 
-## Notes for a viva / project report
 
-- The contract is written for Solidity `^0.8.20` and tested with Hardhat's
-  built-in network using Chai assertions (`test/LandRegistry.test.js`)
-  covering registration, duplicate-ID rejection, tamper detection, transfer
-  history, and access control.
-- The frontend uses `ethers.js v6` via CDN and the browser's native
-  `crypto.subtle.digest` for SHA-256 hashing — no external hashing library is
-  required.
-- This is a teaching/demo implementation. For production use you'd want to
-  add: pausability/upgradability strategy, gas optimizations for large
-  histories, off-chain indexing (e.g. The Graph) for fast queries, and a
-  real government PKI integration for verifier onboarding.
